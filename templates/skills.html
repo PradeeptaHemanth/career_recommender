@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Skills</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function filterSkills() {
+            let input = document.getElementById("skillSearch").value.toLowerCase();
+            let skills = document.getElementsByClassName("skill-item");
+
+            for (let i = 0; i < skills.length; i++) {
+                let text = skills[i].innerText.toLowerCase();
+                skills[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</head>
+<body class="skills-page">
+    <h2 class="fade-in">✨ Select Your Skills ✨</h2>
+
+    <!-- Search Bar -->
+    <input type="text" id="skillSearch" onkeyup="filterSkills()" placeholder="🔍 Search for a skill..." class="search-box fade-in">
+
+    <!-- Skills List -->
+    <form method="POST" action="/results" class="skill-list">
+        {% for skill in skills %}
+            <div class="skill-item slide-up">
+                <label><input type="checkbox" name="skills" value="{{ skill }}"> {{ skill }}</label>
+            </div>
+        {% endfor %}
+
+        <!-- Fixed Submit Button -->
+        <div class="submit-bar">
+            <button type="submit" class="btn pulse">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

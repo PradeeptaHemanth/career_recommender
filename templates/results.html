@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="results-page">
+    <h2 class="fade-in">🎯 Your Career Recommendations</h2>
+    <div class="cards">
+        {% for career in careers %}
+            <div class="card slide-up">
+                <h3>{{ career.title }}</h3>
+                <p>{{ career.description }}</p>
+                <a href="{{ career.link }}" target="_blank" class="btn">Learn More</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

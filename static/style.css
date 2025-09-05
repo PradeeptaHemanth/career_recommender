@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: rgb(251, 250, 250);
+}
+
+/* Landing Page */
+.landing {
+    background: linear-gradient(120deg, #f56f73, #f9997f, #fcb6a3, #835fd7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Skills Page */
+.skills-page {
+    background: linear-gradient(135deg, #4c019c, #620597, #9b2bdc, #6c1afa, #5738ef, #0c4ab7);
+    min-height: 100vh;
+    padding: 20px;
+}
+.search-box {
+    width: 60%;
+    padding: 12px;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgba(11, 11, 11, 0.2);
+}
+.skill-list {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 12px;
+}
+.skill-item {
+    background: rgba(255, 255, 255, 0.158);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.skill-item:hover {
+    background: rgba(255, 255, 255, 0.299);
+}
+
+/* Results Page */
+.results-page {
+    background: linear-gradient(120deg, #43cea2, #185a9d);
+    min-height: 100vh;
+    padding: 20px;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card {
+    background: rgba(253, 252, 252, 0.477);
+    color: rgb(3, 3, 3);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px;
+    width: 70%;
+    box-shadow: 0px 5px 15px rgba(219, 78, 78, 0.3);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #ff4081;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #fa0259;
+}
+.submit-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+.slide-up {
+    animation: slideUp 1s ease;
+}
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes slideUp {
+    from {transform: translateY(30px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
