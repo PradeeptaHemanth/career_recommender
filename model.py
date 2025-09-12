@@ -22,9 +22,11 @@ def recommend_careers(user_skills, top_n=5):
     
     recommendations = []
     for i in top_indices:
+        job_title = df.iloc[i]["Job Title"]
+        google_jobs_url = f"https://www.google.com/search?q={job_title.replace(' ', '+')}+jobs"
         recommendations.append({
-            "title": df.iloc[i]["Job Title"],
+            "title": job_title,
             "description": df.iloc[i]["Job Description"],
-            "link": f"https://www.google.com/search?q={df.iloc[i]['Job Title'].replace(' ', '+')}"
+            "link": google_jobs_url
         })
     return recommendations

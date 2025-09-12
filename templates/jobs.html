@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ career }} Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="results-page">
+    <h2 class="fade-in">🌍 Real-Time {{ career }} Jobs</h2>
+    <div class="cards">
+        {% if jobs %}
+            {% for job in jobs %}
+                <div class="card slide-up">
+                    <h3>{{ job.title }}</h3>
+                    <p><strong>Company:</strong> {{ job.company }}</p>
+                    <p><strong>Location:</strong> {{ job.location }}</p>
+                    <p>{{ job.snippet | safe }}</p>
+                    <a href="{{ job.link }}" target="_blank" class="btn">Apply Now</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="fade-in">⚠️ No jobs found for {{ career }} at the moment.</p>
+        {% endif %}
+    </div>
+
+    <a href="/" class="btn">🏠 Back to Home</a>
+</body>
+</html>
